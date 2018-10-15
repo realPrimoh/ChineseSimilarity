@@ -13,7 +13,11 @@ ChStr2fc <- function(Chin.strs = "", sep = "_", parallel = FALSE)
 {
   # Convert one string to four corner code
   ChStr2fc <- function(Chin.str, FClib){
-    Sys.setlocale(category = 'LC_ALL', locale = 'chs')
+    if(Sys.info()["sysname"]=="Darwin") {
+      Sys.setlocale(categotry = 'LC_ALL', locale = "en_us.UTF-8")
+    } else {
+      Sys.setlocale(category = 'LC_ALL', locale = 'chs')
+    }
     if(is.na(Chin.str)) return(NA)
     Chin.char <- unlist(strsplit(Chin.str, split = "")) # divide the string to characters
 

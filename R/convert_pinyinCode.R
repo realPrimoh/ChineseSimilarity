@@ -17,7 +17,12 @@ ChStr2pyc <- function(Chin.strs = "", method = c("toneless", "tone"), multi = TR
 
   # Convert a string to pinyin
   ChStr2py <- function(Chin.str, pylibnew){
-    Sys.setlocale(category = 'LC_ALL', locale = 'chs')
+    if(Sys.info()["sysname"]=="Darwin") {
+      Sys.setlocale(categotry = 'LC_ALL', locale = "en_us.UTF-8")
+    } else {
+      Sys.setlocale(category = 'LC_ALL', locale = 'chs')
+    }
+
 
     Chin.char <- unlist(strsplit(Chin.str, split = "")) # divide the string to characters
 
