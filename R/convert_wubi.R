@@ -14,7 +14,7 @@ ChStr2wb <- function(Chin.strs = "", sep = "_", parallel = FALSE)
   # Convert one string to wubi code
   ChStr2wb <- function(Chin.str, WBlib){
     if(Sys.info()["sysname"]=="Darwin") {
-      Sys.setlocale(categotry = 'LC_ALL', locale = "en_us.UTF-8")
+      Sys.setlocale(category = 'LC_ALL', locale = "en_us.UTF-8")
     } else {
       Sys.setlocale(category = 'LC_ALL', locale = 'chs')
     }
